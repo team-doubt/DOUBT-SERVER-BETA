@@ -13,5 +13,7 @@ echo "- 오일러 (Leonhard Euler)"
 echo "- 파스칼 (Blaise Pascal)"
 echo ""
 echo "서버 시작 중..."
+echo "📡 Socket.IO 서버가 http://localhost:8000 에서 실행됩니다"
+echo ""
 
-uv run uvicorn src.doubt_server_beta.main:app --reload --host 0.0.0.0 --port 8080
+uv run python -m src.doubt_server_beta.main

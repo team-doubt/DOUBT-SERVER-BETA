@@ -1,0 +1,10 @@
+[project]
+name = "doubt-server-beta"
+version = "0.1.0"
+description = "Socket.IO Chat Server with FastAPI"
+dependencies = [
+    "fastapi>=0.104.1",
+    "uvicorn[standard]>=0.24.0",
+    "python-socketio>=5.11.0",
+]
+requires-python = ">=3.8"

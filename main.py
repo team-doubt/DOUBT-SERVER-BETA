@@ -1,6 +1,7 @@
 import socketio
 from fastapi import FastAPI
 from fastapi.responses import HTMLResponse
+from fastapi.middleware.cors import CORSMiddleware
 import logging
 from typing import Dict
 
@@ -13,6 +14,15 @@ sio = socketio.AsyncServer(async_mode='asgi', cors_allowed_origins="*")
 
 # FastAPI 앱 생성
 app = FastAPI(title="DOUBT Chat Server", description="5명의 수학자 채팅방")
+
+# CORS 전체 허용
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 # Socket.IO와 FastAPI 결합
 socket_app = socketio.ASGIApp(sio, app)

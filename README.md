@@ -12,20 +12,44 @@
 
 ## 🚀 빠른 시작
 
+### 0. 환경 설정 (우분투/Ubuntu)
+
+```bash
+# Python 설치
+sudo apt update
+sudo apt install python3 python3-pip
+
+# UV 설치 (Python 패키지 매니저)
+curl -LsSf https://astral.sh/uv/install.sh | sh
+source ~/.bashrc
+
+# 또는 pip로 UV 설치
+pip install uv
+```
+
+### 1. 의존성 설치
+
 ### 1. 의존성 설치
 
 ```bash
+# UV 사용 (권장)
 uv sync
+
+# 또는 pip 사용
+pip install -r requirements.txt
 ```
 
 ### 2. 서버 실행
 
 ```bash
-# 실행 스크립트 사용
-./run.sh
+# UV 사용 (권장)
+uv run python main.py
 
 # 또는 직접 실행
-python main.py
+python3 main.py
+
+# 백그라운드 실행
+nohup python3 main.py &
 ```
 
 ### 3. 브라우저에서 접속
